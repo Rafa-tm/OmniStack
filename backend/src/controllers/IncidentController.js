@@ -13,7 +13,7 @@ module.exports = {
       .offset((page - 1) * 5)
       .select(['incidents.*','ongs.name', 'ongs.email', 'ongs.whatsapp','ongs.city','ongs.uf']);
     
-    response.header('total-Incidents', count['count(*)']);
+    response.header('total-incidents', parseInt(count['count(*)']));
     return response.json(IncidentsList);
   },
 
